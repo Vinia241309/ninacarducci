@@ -1,43 +1,56 @@
 (function($) {
+  const DEFAULT_LIGHTBOX_ID = "galleryLightbox";
+  const DEFAULT_COLUMNS = 3;
+
   $.fn.mauGallery = function(options) {
-    var options = $.extend($.fn.mauGallery.defaults, options);
+    const defaults = {
+      columns: DEFAULT_COLUMNS,
+      lightBox: true,
+      lightboxId: DEFAULT_LIGHTBOX_ID,
+      showTags: true,
+      tagsPosition: "bottom",
+      navigation: true,
+    };
+    const settings = $.extend({}, defaults, options);
+
     var tagsCollection = [];
+
     return this.each(function() {
-      $.fn.mauGallery.methods.createRowWrapper($(this));
-      if (options.lightBox) {
+      const $this = $(this);
+
+      $.fn.mauGallery.methods.createRowWrapper($this);
+
+      if (settings.lightBox) {
         $.fn.mauGallery.methods.createLightBox(
-          $(this),
-          options.lightboxId,
-          options.navigation
+          $this,
+          settings.lightboxId,
+          settings.navigation
         );
       }
-      $.fn.mauGallery.listeners(options);
 
-      $(this)
-        .children(".gallery-item")
-        .each(function(index) {
-          $.fn.mauGallery.methods.responsiveImageItem($(this));
-          $.fn.mauGallery.methods.moveItemInRowWrapper($(this));
-          $.fn.mauGallery.methods.wrapItemInColumn($(this), options.columns);
-          var theTag = $(this).data("gallery-tag");
-          if (
-            options.showTags &&
-            theTag !== undefined &&
-            tagsCollection.indexOf(theTag) === -1
-          ) {
-            tagsCollection.push(theTag);
-          }
-        });
+      $.fn.mauGallery.listeners(settings);
 
-      if (options.showTags) {
+      $this.children(".gallery-item").each(function(index) {
+        const $item = $(this);
+        $.fn.mauGallery.methods.responsiveImageItem($item);
+        $.fn.mauGallery.methods.moveItemInRowWrapper($item);
+        $.fn.mauGallery.methods.wrapItemInColumn($item, settings.columns);
+
+        const theTag = $item.data("gallery-tag");
+        if (settings.showTags && theTag !== undefined && !tagsCollection.includes(theTag)) {
+          tagsCollection.push(theTag);
+        }
+      });
+
+      if (settings.showTags) {
         $.fn.mauGallery.methods.showItemTags(
-          $(this),
-          options.tagsPosition,
+          $this,
+          settings.tagsPosition,
           tagsCollection
         );
       }
 
-      $(this).fadeIn(500);
+      $this.fadeIn(500);
     });
   };
   $.fn.mauGallery.defaults = {
