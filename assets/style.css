@@ -86,6 +86,7 @@ body {
 	font-family: 'Spectral';
 	font-weight: 800;
 	font-style: italic;
+	font-size: 1rem;
 	width: 60%;
 }
 #about-me p {
@@ -267,6 +268,9 @@ input[type="submit"] {
 	#about{
 		flex-direction: column;
 
+	}
+	.about-me__introduction{
+		width: 100%;
 	}
 	.picture {
 		width: 50%;
