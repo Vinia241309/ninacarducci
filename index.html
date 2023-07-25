@@ -8,10 +8,14 @@
     <noscript><link rel="stylesheet" href="./assets/bootstrap/bootstrap.css"></noscript>
 	<link rel="stylesheet" href="./assets/style.css">
 	<link rel="preload" as="style" href="./assets/style.css" onload="this.onload=null;this.rel='stylesheet'">
+	<meta charset="UTF-8">	
 	<noscript><link rel="stylesheet" href="./assets/style.css"></noscript>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" as="image" href="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash.webp">
+	<link rel="preload" as="image" href="./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash.webp">
+	<link rel="preload" as="image" href="./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash.webp">
 	<meta property="og:title" content="Nina Carducci photographe professionnelle">
     <meta property="og:description" content="Découvrez mes photos émotions capturées, figeant les moments les plus précieux avec passion et talent. Nina Carducci Photographe professionnelle en Île-de-France immortaliser vos instants uniques.">
     <meta property="og:image" content="https://ninacarducciphotographe.netlify.app/assets/images/nina.webp">
@@ -27,36 +31,6 @@
     <meta itemprop="name" content="Nina Carducci Photographe professionnelle">
     <meta itemprop="description" content="Découvrez mes photos émotions capturées, figeant les moments les plus précieux avec passion et talent. Nina Carducci Photographe professionnelle en Île-de-France immortaliser vos instants uniques.">
     <meta itemprop="image" content="https://ninacarducciphotographe.netlify.app/assets/images/nina.webp">
-	<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "LocalBusiness",
-			"name": "Nina Carducci Photographe professionnelle",
-			"description": "Service de photographie professionnel en Île-de-France, capturant vos moments les plus précieux avec passion et talent.",
-			"url": "https://ninacarducciphotographe.netlify.app",
-			"image": "https://ninacarducciphotographe.netlify.app/assets/images/nina.webp",
-			"telephone": "05 56 67 78 89",
-			"address": {
-				"@type": "PostalAddress",
-				"streetAddress": "68 avenue Alsace-Lorraine",
-				"addressLocality": "Bordeaux",
-				"postalCode": "33200"
-			},
-		
-			"serviceArea": {
-				"@type": "GeoCircle",
-				"geoMidpoint": {
-					"@type": "GeoCoordinates",
-					"latitude": "44.84715",
-					"longitude": "-0.60665"
-				}
-			},
-			"priceRange": "50€-400€",
-			"openingHours": "Mo-Fr 10:00-19:00"
-		}
-		</script>
-		
-	<meta charset="UTF-8">	
 </head>
 <body>
 <div class="top-header">
@@ -81,8 +55,12 @@
 		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash.webp" srcset="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash 1180.webp, ./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash 1000.webp , ./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash 650.webp" sizes="(max-width: 650px) 650px,
-				(max-width: 1000px) 1000px,1180px" class="d-block w-100" width="1900" height="880" alt="photo d'un homme d'affaires qui traverse un passage piéton" loading="eager">
+				<img src="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash.webp" srcset="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash 1180.webp 1180w,
+				 ./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash 1000.webp 1000w, 
+				 ./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash 650.webp 650w" 
+				 sizes="100vw"
+				  class="d-block w-100" width="1900" height="880"
+				   alt="photo d'un homme d'affaires qui traverse un passage piéton" loading="eager">
 
 			</div>
 			<div class="carousel-item">
@@ -213,6 +191,34 @@
 		</div>
 	</div>
 </div>
+<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "Nina Carducci Photographe professionnelle",
+			"description": "Service de photographie professionnel en Île-de-France, capturant vos moments les plus précieux avec passion et talent.",
+			"url": "https://ninacarducciphotographe.netlify.app",
+			"image": "https://ninacarducciphotographe.netlify.app/assets/images/nina.webp",
+			"telephone": "05 56 67 78 89",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "68 avenue Alsace-Lorraine",
+				"addressLocality": "Bordeaux",
+				"postalCode": "33200"
+			},
+		
+			"serviceArea": {
+				"@type": "GeoCircle",
+				"geoMidpoint": {
+					"@type": "GeoCoordinates",
+					"latitude": "44.84715",
+					"longitude": "-0.60665"
+				}
+			},
+			"priceRange": "50€-400€",
+			"openingHours": "Mo-Fr 10:00-19:00"
+		}
+		</script>
 <script src="./assets/bootstrap/bootstrap.bundle.js" defer></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="./assets/maugallery.js" defer></script>
