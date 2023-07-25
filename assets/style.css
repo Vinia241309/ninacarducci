@@ -262,12 +262,14 @@ input[type="submit"] {
 	#about-me h6, #about-me p {
 		width: 100%;
 	}
+	.about-me__introduction{
+		width: 100%;
+	}
 }
 
 @media all and (max-width: 1000px) {
 	#about{
 		flex-direction: column;
-
 	}
 	.about-me__introduction{
 		width: 100%;
