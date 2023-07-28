@@ -280,19 +280,12 @@ body {
 	width:100%
 	}
 	
-	/*.about-me__introduction {
-	width:100%
-	}*/
 	}
 	
 	@media all and (max-width: 1000px) {
 	#about {
 	flex-direction:column
 	}
-	
-	/*.about-me__introduction {
-	width:100%
-	}*/
 	
 	.picture {
 	width:50%
@@ -401,7 +394,5 @@ body {
 	width:80%
 	}
 	
-	/*.about-me__introduction {
-	width:100%
-	}*/
+	
 	}
