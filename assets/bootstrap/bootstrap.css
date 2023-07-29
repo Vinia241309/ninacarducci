@@ -1,4 +1,10 @@
-
+@charset "UTF-8";
+/*!
+ * Bootstrap v5.1.3 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -78,6 +84,18 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+}
+
+hr:not([size]) {
+  height: 1px;
+}
+
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -88,18 +106,37 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 h1, .h1 {
   font-size: calc(1.375rem + 1.5vw);
 }
+@media (min-width: 1200px) {
+  h1, .h1 {
+    font-size: 2.5rem;
+  }
+}
 
 h2, .h2 {
   font-size: calc(1.325rem + 0.9vw);
 }
-
+@media (min-width: 1200px) {
+  h2, .h2 {
+    font-size: 2rem;
+  }
+}
 
 h3, .h3 {
   font-size: calc(1.3rem + 0.6vw);
 }
+@media (min-width: 1200px) {
+  h3, .h3 {
+    font-size: 1.75rem;
+  }
+}
 
 h4, .h4 {
   font-size: calc(1.275rem + 0.3vw);
+}
+@media (min-width: 1200px) {
+  h4, .h4 {
+    font-size: 1.5rem;
+  }
 }
 
 h5, .h5 {
@@ -115,6 +152,21 @@ p {
   margin-bottom: 1rem;
 }
 
+abbr[title],
+abbr[data-bs-original-title] {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+  cursor: help;
+  -webkit-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
 ol,
 ul {
   padding-left: 2rem;
@@ -127,13 +179,112 @@ dl {
   margin-bottom: 1rem;
 }
 
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+}
+
 blockquote {
   margin: 0 0 1rem;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+small, .small {
+  font-size: 0.875em;
+}
+
+mark, .mark {
+  padding: 0.2em;
+  background-color: #fcf8e3;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
 }
 
 a {
   color: #0d6efd;
   text-decoration: underline;
+}
+a:hover {
+  color: #0a58ca;
+}
+
+a:not([href]):not([class]), a:not([href]):not([class]):hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--bs-font-monospace);
+  font-size: 1em;
+  direction: ltr /* rtl:ignore */;
+  unicode-bidi: bidi-override;
+}
+
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto;
+  font-size: 0.875em;
+}
+pre code {
+  font-size: inherit;
+  color: inherit;
+  word-break: normal;
+}
+
+code {
+  font-size: 0.875em;
+  color: #d63384;
+  word-wrap: break-word;
+}
+a > code {
+  color: inherit;
+}
+
+kbd {
+  padding: 0.2rem 0.4rem;
+  font-size: 0.875em;
+  color: #fff;
+  background-color: #212529;
+  border-radius: 0.2rem;
+}
+kbd kbd {
+  padding: 0;
+  font-size: 1em;
+  font-weight: 700;
 }
 
 figure {
@@ -144,6 +295,35 @@ img,
 svg {
   vertical-align: middle;
 }
+
+table {
+  caption-side: bottom;
+  border-collapse: collapse;
+}
+
+caption {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #6c757d;
+  text-align: left;
+}
+
+th {
+  text-align: inherit;
+  text-align: -webkit-match-parent;
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+
 label {
   display: inline-block;
 }
@@ -151,6 +331,11 @@ label {
 button {
   border-radius: 0;
 }
+
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
 input,
 button,
 select,
@@ -167,6 +352,21 @@ select {
   text-transform: none;
 }
 
+[role=button] {
+  cursor: pointer;
+}
+
+select {
+  word-wrap: normal;
+}
+select:disabled {
+  opacity: 1;
+}
+
+[list]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
 button,
 [type=button],
 [type=reset],
@@ -179,6 +379,12 @@ button:not(:disabled),
 [type=submit]:not(:disabled) {
   cursor: pointer;
 }
+
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
 textarea {
   resize: vertical;
 }
@@ -187,7 +393,6 @@ textarea {
   max-width: 100%;
   height: auto;
 }
-
 
 
 .container,
@@ -204,21 +409,6 @@ textarea {
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
-  .container-sm, .container {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .container-md, .container-sm, .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .container-lg, .container-md, .container-sm, .container {
-    max-width: 960px;
-  }
-}
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -242,6 +432,14 @@ textarea {
   width: 100%;
 }
 
+
+
+.fade {
+  transition: opacity 0.15s linear;
+}
+.fade:not(.show) {
+  opacity: 0;
+}
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -267,6 +465,20 @@ textarea {
   color: #fff;
   background-color: #0d6efd;
 }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1055;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
 .carousel {
   position: relative;
 }
@@ -296,11 +508,15 @@ textarea {
   backface-visibility: hidden;
   transition: transform 0.6s ease-in-out;
 }
+
+
 .carousel-item.active,
 .carousel-item-next,
 .carousel-item-prev {
   display: block;
 }
+
+
 .carousel-item-next:not(.carousel-item-start),
 .active.carousel-item-end {
   transform: translateX(100%);
@@ -310,6 +526,7 @@ textarea {
 .active.carousel-item-start {
   transform: translateX(-100%);
 }
+
 .carousel-control-prev,
 .carousel-control-next {
   position: absolute;
@@ -328,6 +545,7 @@ textarea {
   opacity: 0.5;
   transition: opacity 0.15s ease;
 }
+
 .carousel-control-prev {
   left: 0;
 }
@@ -388,3 +606,25 @@ textarea {
 .carousel-indicators .active {
   opacity: 1;
 }
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+
+.w-100 {
+  width: 100% !important;
+}
+
